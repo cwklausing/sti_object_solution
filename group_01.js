@@ -57,9 +57,6 @@ function calculateSTI (eNum, salary, rating) {
 
 //Function to calculate values for each employee
 function individualCalc (employee) {
-    //Create Array
-    var individualArray = [];
-
     //Define employee variables;
     var eName = employee[0];
     var eNumber = employee[1];
@@ -73,8 +70,16 @@ function individualCalc (employee) {
 
 
     //Pushing all this to the new Array
-    individualArray.push(eName, eSTI, eCompensation, eBonus);
+    var newEmpObject = new EmployeeObject(eName, eSTI, eCompensation, eBonus);
 
     //logging the array
-    console.log(individualArray);
+    console.log(newEmpObject);
+}
+
+//Employee Constructur
+function EmployeeObject(name, sti, compensation, bonus) {
+    this.name = name;
+    this.sti = sti;
+    this.compensation = compensation;
+    this.bonus = bonus;
 }
